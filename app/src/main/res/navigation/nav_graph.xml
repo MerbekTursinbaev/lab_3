@@ -2,10 +2,36 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/fragmentButton">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.nextbutton.ui.MainFragment"
         android:label="MainFragment" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.nextbutton.ui.FirstFragment"
+        android:label="FirstFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.nextbutton.ui.SecondFragment"
+        android:label="SecondFragment" />
+
+    <fragment
+        android:id="@+id/fragmentButton"
+        android:name="com.example.nextbutton.ui.FragmentButton"
+        android:label="FragmentButton" >
+        <action
+            android:id="@+id/action_fragmentButton_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_fragmentButton_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_fragmentButton_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
 </navigation>

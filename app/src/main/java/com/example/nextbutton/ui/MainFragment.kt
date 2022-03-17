@@ -2,7 +2,6 @@ package com.example.nextbutton.ui
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.example.nextbutton.R
@@ -63,8 +62,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun resetButton() {
-        binding.btnReset.setOnClickListener {
-            randomButton()
+        binding.apply {
+            btnReset.setOnClickListener {
+                buttonTop.isVisible = false
+                buttonStart.isVisible = false
+                buttonEnd.isVisible = false
+                buttonBottom.isVisible = false
+                buttonCenter.isVisible = true
+                randomButton()
+            }
         }
     }
 
